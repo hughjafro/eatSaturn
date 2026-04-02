@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/check-llm-spend",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/cron/weekly-email",
+      "schedule": "0 18 * * 0"
+    }
+  ]
+}

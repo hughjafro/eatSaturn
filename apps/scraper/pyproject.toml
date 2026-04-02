@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "cart-spoon-scraper"
+version = "0.1.0"
+description = "Weekly grocery sale ad scraper for CartSpoon"
+authors = [{name = "hughjafro", email = "cmtolbert1@gmail.com"}]
+python = "^3.9"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+playwright = "^1.40"
+beautifulsoup4 = "^4.12"
+apscheduler = "^3.10"
+psycopg2-binary = "^2.9"
+httpx = "^0.26"
+pydantic = "^2.5"
+python-dotenv = "^1.0"
+fastapi = "^0.109"
+uvicorn = "^0.27"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4"
+ruff = "^0.1"
+black = "^24.0"
+pytest-asyncio = "^0.23"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

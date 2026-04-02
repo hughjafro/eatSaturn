@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { UpgradeButton } from "@/components/UpgradeButton";
 
 const FREE_FEATURES = [
   "Weekly sale items for 1 store",
@@ -69,14 +70,7 @@ export default function UpgradePage() {
               </li>
             ))}
           </ul>
-          <form action="/api/checkout" method="POST" className="mt-6">
-            <button
-              type="submit"
-              className="w-full rounded-xl bg-green-600 py-3 font-semibold text-white hover:bg-green-700"
-            >
-              Upgrade now
-            </button>
-          </form>
+          <UpgradeButton />
         </div>
       </div>
 

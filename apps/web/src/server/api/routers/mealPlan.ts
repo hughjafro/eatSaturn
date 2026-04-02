@@ -10,6 +10,7 @@ import {
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { redis } from "@/lib/redis";
 import { getMondayOfCurrentWeek } from "@/lib/dates";
+import { posthog } from "@/lib/posthog";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 
@@ -347,6 +348,22 @@ export const mealPlanRouter = createTRPCRouter({
 
     // 10. Cache the plan ID
     await redis.set(key, planId, { ex: 60 * 60 * 24 * 7 }); // 7 days
+
+    // 11. Track plan_generated event
+    posthog.capture({
+      distinctId: user.id,
+      event: "plan_generated",
+      properties: {
+        week_of: weekOf,
+        model,
+        store_count: storeIds.length,
+        is_premium: isPremium,
+        recipe_count: recipes.length,
+        total_cost: claudeResponse.total_estimated_cost,
+        savings: claudeResponse.savings_vs_regular,
+      },
+    });
+    await posthog.shutdown();
 
     return { planId, cached: false };
   }),

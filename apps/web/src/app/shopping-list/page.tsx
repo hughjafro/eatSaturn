@@ -1,5 +1,6 @@
 import { api } from "@/lib/trpc/server";
 import { ShoppingList } from "@/components/ShoppingList";
+import { TrackPageView } from "@/components/TrackPageView";
 import Link from "next/link";
 
 export default async function ShoppingListPage() {
@@ -26,6 +27,7 @@ export default async function ShoppingListPage() {
           Back to plan
         </Link>
       </div>
+      <TrackPageView event="shopping_list_opened" />
       <ShoppingList items={[]} totalCost={plan.total_cost} />
     </main>
   );

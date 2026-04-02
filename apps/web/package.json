@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.82.0",
+    "@react-email/components": "^1.0.11",
+    "@react-email/render": "^2.0.5",
     "@supabase/auth-helpers-nextjs": "^0.15.0",
     "@supabase/supabase-js": "^2.101.1",
     "@tanstack/react-query": "^5.96.1",
@@ -21,6 +23,8 @@
     "@upstash/redis": "^1.37.0",
     "ioredis": "^5.10.1",
     "next": "16.2.2",
+    "posthog-js": "^1.364.6",
+    "posthog-node": "^5.28.11",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "resend": "^6.10.0",

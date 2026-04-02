@@ -11,7 +11,8 @@
       "Bash(npx tsc:*)",
       "Bash(node:*)",
       "Bash(npx supabase:*)",
-      "Bash(SUPABASE_ACCESS_TOKEN=sbp_638c99cb6b9707ea17b95a9cab44b4decb177028 npx supabase db push)"
+      "Bash(SUPABASE_ACCESS_TOKEN=sbp_638c99cb6b9707ea17b95a9cab44b4decb177028 npx supabase db push)",
+      "Bash(npx biome:*)"
     ]
   }
 }

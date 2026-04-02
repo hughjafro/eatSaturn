@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { usePostHog } from "posthog-js/react";
 import { trpc } from "@/lib/trpc/client";
 import { Button } from "@/components/ui/Button";
 
@@ -15,9 +16,13 @@ const LOADING_MESSAGES = [
 export default function GeneratePage() {
   const router = useRouter();
   const [messageIdx, setMessageIdx] = useState(0);
+  const ph = usePostHog();
 
   const generate = trpc.mealPlan.generate.useMutation({
-    onSuccess: () => router.push("/plan"),
+    onSuccess: ({ cached }) => {
+      ph.capture("plan_generated", { from_cache: cached });
+      router.push("/plan");
+    },
     onError: (err) => alert(`Error: ${err.message}`),
   });
 

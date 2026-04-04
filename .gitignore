@@ -22,3 +22,6 @@ __pycache__/
 # Supabase
 supabase/.branches/
 supabase/.temp/
+
+# Claude
+CLAUDE.local.md

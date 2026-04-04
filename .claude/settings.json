@@ -1,0 +1,46 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run lint)",
+      "Bash(npm run check)",
+      "Bash(npm run format)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx supabase:*)",
+      "Bash(npx biome:*)",
+      "Bash(node:*)",
+      "Bash(poetry install)",
+      "Bash(poetry run pytest:*)",
+      "Bash(poetry run python:*)",
+      "Bash(poetry run uvicorn:*)",
+      "Bash(ruff check:*)",
+      "Bash(black:*)",
+      "Bash(pip3 install:*)",
+      "Bash(flyctl status:*)",
+      "Bash(flyctl logs:*)",
+      "Bash(flyctl deploy)",
+      "Bash(stripe listen:*)",
+      "Bash(stripe trigger:*)",
+      "Bash(curl:*)",
+      "Bash(psql:*)",
+      "Bash(bash scripts/setup.sh)",
+      "Bash(bash scripts/seed-test-data.sh:*)",
+      "Bash(bash scripts/check-spend.sh:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push --force-with-lease:*)",
+      "Bash(DROP TABLE:*)",
+      "Bash(DELETE FROM users:*)",
+      "Bash(flyctl destroy:*)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 2
+  }
+}
